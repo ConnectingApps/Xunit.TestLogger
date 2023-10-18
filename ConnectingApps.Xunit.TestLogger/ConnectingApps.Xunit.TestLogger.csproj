@@ -24,6 +24,13 @@
 		</None>
 	</ItemGroup>
 
+	<ItemGroup>
+		<None Update="Icon.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+
   <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="[6.0.0, 6.0.99]" />
     <PackageReference Include="xunit.abstractions" Version="[2.0.3, 3.2.0]" />

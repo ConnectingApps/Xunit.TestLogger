@@ -17,29 +17,29 @@
 	<Version>1.0.0-preview</Version>
   </PropertyGroup>
 
-  	<ItemGroup>
+	<!-- Package Icon -->
+	<ItemGroup>
+		<None Include="Icon.png" Pack="True" PackagePath="" />
+	</ItemGroup>
+
+	<!-- Readme File -->
+	<ItemGroup>
 		<None Include="..\README.md">
 			<Pack>True</Pack>
 			<PackagePath>\</PackagePath>
 		</None>
 	</ItemGroup>
 
-	<ItemGroup>
-		<None Update="Icon.png">
-			<Pack>True</Pack>
-			<PackagePath>\</PackagePath>
-		</None>
+	<!-- NuGet packages for net6.0 -->
+	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="[6.0.0, 6.0.99]" />
+		<PackageReference Include="xunit.abstractions" Version="[2.0.3, 3.2.0]" />
 	</ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="[6.0.0, 6.0.99]" />
-    <PackageReference Include="xunit.abstractions" Version="[2.0.3, 3.2.0]" />
-  </ItemGroup>
-
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'net7.0'">
-	<PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="[7.0.0, 7.0.99]" />
-	<PackageReference Include="xunit.abstractions" Version="[2.0.3, 3.2.0]" />
-  </ItemGroup>
+	<!-- NuGet packages for net7.0 -->
+	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0'">
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="[7.0.0, 7.0.99]" />
+		<PackageReference Include="xunit.abstractions" Version="[2.0.3, 3.2.0]" />
+	</ItemGroup>
 
 </Project>

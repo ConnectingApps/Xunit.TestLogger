@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectingApps.LoggingWebApi", "ConnectingApps.LoggingWebApi\ConnectingApps.LoggingWebApi.csproj", "{EC44F43B-29AD-411E-8E0D-84FB44F11B5E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectingApps.Xunit.TestLogger", "ConnectingApps.Xunit.TestLogger\ConnectingApps.Xunit.TestLogger.csproj", "{12CA12C6-86AA-4666-AD7B-7A774540C9C1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{EC44F43B-29AD-411E-8E0D-84FB44F11B5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC44F43B-29AD-411E-8E0D-84FB44F11B5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC44F43B-29AD-411E-8E0D-84FB44F11B5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12CA12C6-86AA-4666-AD7B-7A774540C9C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12CA12C6-86AA-4666-AD7B-7A774540C9C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12CA12C6-86AA-4666-AD7B-7A774540C9C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12CA12C6-86AA-4666-AD7B-7A774540C9C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

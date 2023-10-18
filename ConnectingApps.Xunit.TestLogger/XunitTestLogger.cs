@@ -12,9 +12,9 @@ namespace ConnectingApps.Xunit.TestLogger
             _testOutputHelper = testOutputHelper;
         }
 
-        public IDisposable BeginScope<TState>(TState state)
+        IDisposable ILogger.BeginScope<TState>(TState state)
         {
-            return null!;
+            return default!;
         }
 
         public bool IsEnabled(LogLevel logLevel)

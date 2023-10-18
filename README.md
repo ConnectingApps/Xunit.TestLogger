@@ -23,6 +23,7 @@ public ImprovedLoggingTest(ITestOutputHelper output)
 ```
 Here is how it looks like:
 
+[Link To ScreenShot](https://github.com/ConnectingApps/Xunit.TestLogger/blob/main/ScreenForLogging.png?raw=true)
 ![Alt text](ScreenForLogging.png)
 
 

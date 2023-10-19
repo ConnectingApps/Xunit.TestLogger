@@ -65,10 +65,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup .NET SDK
+      - name: Setup dotnet
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '6.0.x' # Adjust the version as necessary
+          dotnet-version: | 
+            6.0.x
+            7.0.x
+            8.0.x
+
+      - name: List the sdks
+        run: dotnet --list-sdks           
 
       - name: Restore dependencies
         run: dotnet restore Xunit.TestLogger.sln

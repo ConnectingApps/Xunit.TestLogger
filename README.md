@@ -13,7 +13,7 @@ public NoLoggingTest()
 }
 ```
 
-and start using this way
+and start creating it this way
 
 ```csharp
 public ImprovedLoggingTest(ITestOutputHelper output)

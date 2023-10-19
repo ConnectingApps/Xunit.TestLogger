@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using Microsoft.AspNetCore.Mvc.Testing;
 
-namespace ConnectingApps.LoggingWebApi.IntegrationTest7
+namespace ConnectingApps.LoggingWebApi.IntegrationTest8
 {
     public  class NoLoggingTests : IDisposable
     {

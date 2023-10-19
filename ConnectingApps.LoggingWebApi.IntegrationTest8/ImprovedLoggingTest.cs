@@ -2,7 +2,7 @@ using System.Net;
 using ConnectingApps.Xunit.TestLogger;
 using Xunit.Abstractions;
 
-namespace ConnectingApps.LoggingWebApi.IntegrationTest7
+namespace ConnectingApps.LoggingWebApi.IntegrationTest8
 {
     public class ImprovedLoggingTest : IDisposable
     {

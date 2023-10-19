@@ -27,7 +27,15 @@ jobs:
           dotnet-version: '6.0.x' # Adjust the version as necessary
 
       - name: Run another one-line script
-        run: echo Hello, ${{ vars.PUBLISH_NUGET }}!     
+        run: echo Hello, ${{ vars.PUBLISH_NUGET }}!   
+        
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: | 
+            6.0.x
+            7.0.x
+            8.0.x         
 
       - name: List the sdks
         run: dotnet --list-sdks  

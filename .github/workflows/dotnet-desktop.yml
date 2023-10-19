@@ -27,7 +27,18 @@ jobs:
           dotnet-version: '6.0.x' # Adjust the version as necessary
 
       - name: Run another one-line script
-        run: echo Hello, ${{ vars.PUBLISH_NUGET }}!     
+        run: echo Hello, ${{ vars.PUBLISH_NUGET }}!   
+        
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: | 
+            6.0.x
+            7.0.x
+            8.0.x         
+
+      - name: List the sdks
+        run: dotnet --list-sdks  
 
       - name: Restore dependencies
         run: dotnet restore Xunit.TestLogger.sln
@@ -37,6 +48,12 @@ jobs:
 
       - name: Run Tests
         run: python -c "import os; os.system('dotnet test Xunit.TestLogger.sln --configuration Release --no-build --verbosity normal  --logger trx');"  
+      
+      - name: Publish Artifact Test results
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-results
+          path: '**/TestResults/**/*.trx'
 
       - name: Publish Test Results
         uses: dorny/test-reporter@v1
@@ -54,10 +71,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup .NET SDK
+      - name: Setup dotnet
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '6.0.x' # Adjust the version as necessary
+          dotnet-version: | 
+            6.0.x
+            7.0.x
+            8.0.x
+
+      - name: List the sdks
+        run: dotnet --list-sdks           
 
       - name: Restore dependencies
         run: dotnet restore Xunit.TestLogger.sln

@@ -1,0 +1,6 @@
+@ConnectingApps.LoggingWebApi8_HostAddress = http://localhost:5103
+
+GET {{ConnectingApps.LoggingWebApi8_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

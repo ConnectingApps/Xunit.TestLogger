@@ -48,6 +48,12 @@ jobs:
 
       - name: Run Tests
         run: python -c "import os; os.system('dotnet test Xunit.TestLogger.sln --configuration Release --no-build --verbosity normal  --logger trx');"  
+      
+      - name: Publish Artifact Test results
+        uses: actions/upload-artifact@v3
+        with:
+          name: nuget-package
+          path: '**/TestResults/**/*.trx'
 
       - name: Publish Test Results
         uses: dorny/test-reporter@v1

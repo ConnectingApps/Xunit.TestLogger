@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectingApps.LoggingWebAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectingApps.LoggingWebApi.IntegrationTest7", "ConnectingApps.LoggingWebApi.IntegrationTest7\ConnectingApps.LoggingWebApi.IntegrationTest7.csproj", "{890A8DFE-97A7-496B-A6C8-A1C800445A7A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectingApps.LoggingWebApi8", "ConnectingApps.LoggingWebApi8\ConnectingApps.LoggingWebApi8.csproj", "{B39C853D-A1B3-462A-A9DF-EDA103B2BE74}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{890A8DFE-97A7-496B-A6C8-A1C800445A7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{890A8DFE-97A7-496B-A6C8-A1C800445A7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{890A8DFE-97A7-496B-A6C8-A1C800445A7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B39C853D-A1B3-462A-A9DF-EDA103B2BE74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B39C853D-A1B3-462A-A9DF-EDA103B2BE74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B39C853D-A1B3-462A-A9DF-EDA103B2BE74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B39C853D-A1B3-462A-A9DF-EDA103B2BE74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

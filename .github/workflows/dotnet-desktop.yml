@@ -52,7 +52,7 @@ jobs:
       - name: Publish Artifact Test results
         uses: actions/upload-artifact@v3
         with:
-          name: nuget-package
+          name: test-results
           path: '**/TestResults/**/*.trx'
 
       - name: Publish Test Results

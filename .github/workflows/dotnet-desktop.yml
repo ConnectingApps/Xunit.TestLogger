@@ -29,6 +29,9 @@ jobs:
       - name: Run another one-line script
         run: echo Hello, ${{ vars.PUBLISH_NUGET }}!     
 
+      - name: List the sdks
+        run: dotnet --list-sdks  
+
       - name: Restore dependencies
         run: dotnet restore Xunit.TestLogger.sln
 

@@ -83,8 +83,7 @@ namespace ConnectingApps.LoggingWebApi.IntegrationTest
     }
 }
 ```
-
-
+ As a result, "This should be logged during testing" will be shown in the test output.
 
 
 

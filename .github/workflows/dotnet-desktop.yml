@@ -19,10 +19,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup .NET SDK
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '6.0.x' # Adjust the version as necessary
 
@@ -30,12 +30,13 @@ jobs:
         run: echo Hello, ${{ vars.PUBLISH_NUGET }}!   
         
       - name: Setup dotnet
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: | 
             6.0.x
             7.0.x
-            8.0.x         
+            8.0.x
+            9.0.x         
 
       - name: List the sdks
         run: dotnet --list-sdks  
@@ -50,7 +51,7 @@ jobs:
         run: python -c "import os; os.system('dotnet test Xunit.TestLogger.sln --configuration Release --no-build --verbosity normal  --logger trx');"  
       
       - name: Publish Artifact Test results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: test-results
           path: '**/TestResults/**/*.trx'
@@ -69,15 +70,16 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup dotnet
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: | 
             6.0.x
             7.0.x
             8.0.x
+            9.0.x
 
       - name: List the sdks
         run: dotnet --list-sdks           
@@ -95,11 +97,11 @@ jobs:
         run: find | grep 'nupkg'       
 
       - name: Publish Artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: nuget-package
           path: out/*.nupkg
 
       - name: Publish to NuGet
-        if: ${{ vars.PUBLISH_NUGET == 'true' }} # Conditional execution based on PUBLISH_NUGET environment variable
+        if: github.ref == 'refs/heads/main'
         run: dotnet nuget push "out/*.nupkg" --api-key ${{ secrets.NUGET_KEY }} --source https://api.nuget.org/v3/index.json       

@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net8.0;net7.0;net6.0</TargetFrameworks>
+    <TargetFrameworks>net9.0;net8.0;net7.0;net6.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	<Title>Xunit.TestLogger</Title>
@@ -11,10 +11,10 @@
 	<PackageProjectUrl>https://github.com/ConnectingApps/Xunit.TestLogger</PackageProjectUrl>
 	<RepositoryUrl>https://github.com/ConnectingApps/Xunit.TestLogger</RepositoryUrl>
 	<RepositoryType>git</RepositoryType>
-	<PackageReleaseNotes>Full support for .NET 8 (no rc or preview)</PackageReleaseNotes>
+	<PackageReleaseNotes>Support for .NET 9 (in preview)</PackageReleaseNotes>
 	<PackageReadmeFile>README.md</PackageReadmeFile>
 	<PackageIcon>Icon.png</PackageIcon>
-	<Version>1.1.0</Version>
+	<Version>1.2.0-net9support</Version>
   </PropertyGroup>
 
 	<!-- Package Icon -->
@@ -51,6 +51,12 @@
 	<ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
 		<PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="[8.0.0, 8.0.99]" />
 		<PackageReference Include="xunit.abstractions" Version="[2.0.3, 3.2.0]" />
-	</ItemGroup>	
+	</ItemGroup>
+
+	<!-- NuGet packages for net9.0 -->
+	<ItemGroup Condition="'$(TargetFramework)' == 'net9.0'">
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="[9.0.0-preview.3.24172.13, 9.0.99]" />
+		<PackageReference Include="xunit.abstractions" Version="[2.0.3, 3.2.0]" />
+	</ItemGroup>		
 
 </Project>

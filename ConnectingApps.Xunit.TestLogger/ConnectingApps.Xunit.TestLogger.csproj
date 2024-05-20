@@ -11,10 +11,10 @@
 	<PackageProjectUrl>https://github.com/ConnectingApps/Xunit.TestLogger</PackageProjectUrl>
 	<RepositoryUrl>https://github.com/ConnectingApps/Xunit.TestLogger</RepositoryUrl>
 	<RepositoryType>git</RepositoryType>
-	<PackageReleaseNotes>Full support for .NET 8 (no rc or preview)</PackageReleaseNotes>
+	<PackageReleaseNotes>Support for .NET 9 (in preview)</PackageReleaseNotes>
 	<PackageReadmeFile>README.md</PackageReadmeFile>
 	<PackageIcon>Icon.png</PackageIcon>
-	<Version>1.1.0</Version>
+	<Version>1.2.0-net9support</Version>
   </PropertyGroup>
 
 	<!-- Package Icon -->

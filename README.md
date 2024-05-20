@@ -4,7 +4,7 @@
 If you make [integration tests](https://learn.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-7.0) with [xUnit](https://xunit.net/), your logging is gone. You can just see if the test succeeds or fails but you cannot see why as you don't have the logging to help you understanding what happened during the runtime of the test, which makes it hard to solve it.
 
 ## Now
-The is situation is different now! The problem is solved for .NET 6, .NET 7 and .NET 8. Alle you need to do is stop using this way of creating a `WebApplicationFactory`:
+The is situation is different now! The problem is solved for .NET 6, .NET 7 and .NET 8 (and .NET 9 in preview). Alle you need to do is stop using this way of creating a `WebApplicationFactory`:
 
 ```csharp
 public NoLoggingTest()

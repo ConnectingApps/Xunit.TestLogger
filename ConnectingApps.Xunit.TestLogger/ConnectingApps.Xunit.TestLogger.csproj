@@ -1,20 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net9.0;net8.0;net7.0;net6.0</TargetFrameworks>
+    <TargetFrameworks>net10.0;net9.0;net8.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	<Title>Xunit.TestLogger</Title>
 	<Company>Connecting Apps</Company>
-	<Description>See the output of your logging in your xUnit integration tests for .NET 6, .NET 7 and .NET 8</Description>
+	<Description>See the output of your logging in your xUnit integration tests for modern .NET </Description>
 	<Copyright>© 2023 Connecting Apps. All rights reserved. The material contained in Connecting Apps products, including, but not limited to, software, documentation, text, images, graphics, logos, and design, is owned by Connecting Apps or its licensors and is protected by international copyright laws. Unauthorized reproduction, distribution, display, performance, modification, or use of these materials is strictly prohibited without the express written consent of Connecting Apps. Connecting Apps, the Connecting Apps logo, and all other trademarks, service marks, graphics, and logos used in connection with Connecting Apps products are trademarks or registered trademarks of Connecting Apps or Connecting Apps licensors. Other trademarks, service marks, graphics, and logos used in connection with the products may be the trademarks of their respective owners. You are granted no right or license with respect to any of the aforesaid trademarks, service marks, graphics, or logos. No part of Connecting Apps products may be copied, reproduced, distributed, republished, downloaded, displayed, posted, or transmitted in any form or by any means, including but not limited to electronic, mechanical, photocopying, recording, or other means, without the prior express written permission of Connecting Apps and the appropriate copyright owner. Warning: The unauthorized reproduction or distribution of this copyrighted work is illegal and may result in criminal copyright infringement, which is punishable by fine and imprisonment.</Copyright>
 	<PackageProjectUrl>https://github.com/ConnectingApps/Xunit.TestLogger</PackageProjectUrl>
 	<RepositoryUrl>https://github.com/ConnectingApps/Xunit.TestLogger</RepositoryUrl>
 	<RepositoryType>git</RepositoryType>
-	<PackageReleaseNotes>Full Support for .NET 9</PackageReleaseNotes>
+	<PackageReleaseNotes>Full Support for .NET 10</PackageReleaseNotes>
 	<PackageReadmeFile>README.md</PackageReadmeFile>
 	<PackageIcon>Icon.png</PackageIcon>
-	<Version>1.2.1</Version>
+	<Version>1.3.0</Version>
   </PropertyGroup>
 
 	<!-- Package Icon -->
@@ -34,19 +34,7 @@
 			<PackagePath>\</PackagePath>
 		</None>
 	</ItemGroup>
-
-	<!-- NuGet packages for net6.0 -->
-	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
-		<PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="[6.0.0, 6.0.99]" />
-		<PackageReference Include="xunit.abstractions" Version="[2.0.3, 3.2.0]" />
-	</ItemGroup>
-
-	<!-- NuGet packages for net7.0 -->
-	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0'">
-		<PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="[7.0.0, 7.0.99]" />
-		<PackageReference Include="xunit.abstractions" Version="[2.0.3, 3.2.0]" />
-	</ItemGroup>
-
+    
 	<!-- NuGet packages for net8.0 -->
 	<ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
 		<PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="[8.0.0, 8.0.99]" />
@@ -57,6 +45,13 @@
 	<ItemGroup Condition="'$(TargetFramework)' == 'net9.0'">
 		<PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="[9.0.0, 9.0.99]" />
 		<PackageReference Include="xunit.abstractions" Version="[2.0.3, 3.2.0]" />
-	</ItemGroup>		
+	</ItemGroup>
+
+    <!-- NuGet packages for net10.0 -->
+    <ItemGroup Condition="'$(TargetFramework)' == 'net10.0'">
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="[10.0.0, 10.0.99]" />
+        <PackageReference Include="xunit.abstractions" Version="[2.0.3, 3.2.0]" />
+    </ItemGroup>
+	
 
 </Project>

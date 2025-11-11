@@ -3,15 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectingApps.LoggingWebApi", "ConnectingApps.LoggingWebApi\ConnectingApps.LoggingWebApi.csproj", "{EC44F43B-29AD-411E-8E0D-84FB44F11B5E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectingApps.Xunit.TestLogger", "ConnectingApps.Xunit.TestLogger\ConnectingApps.Xunit.TestLogger.csproj", "{12CA12C6-86AA-4666-AD7B-7A774540C9C1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectingApps.LoggingWebApi.IntegrationTest", "ConnectingApps.LoggingWebApi.IntegrationTest\ConnectingApps.LoggingWebApi.IntegrationTest.csproj", "{A1D27873-0590-46BD-86BE-9D2BD9E11CF3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectingApps.LoggingWebApi7", "ConnectingApps.LoggingWebApi7\ConnectingApps.LoggingWebApi7.csproj", "{1E968975-2B00-4F44-A9CA-BAC408F7E03C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectingApps.LoggingWebApi.IntegrationTest7", "ConnectingApps.LoggingWebApi.IntegrationTest7\ConnectingApps.LoggingWebApi.IntegrationTest7.csproj", "{890A8DFE-97A7-496B-A6C8-A1C800445A7A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectingApps.LoggingWebApi8", "ConnectingApps.LoggingWebApi8\ConnectingApps.LoggingWebApi8.csproj", "{B39C853D-A1B3-462A-A9DF-EDA103B2BE74}"
 EndProject
@@ -21,32 +13,20 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectingApps.LoggingWebAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectingApps.LoggingWebApi.IntegrationTest9", "ConnectingApps.LoggingWebApi.IntegrationTest9\ConnectingApps.LoggingWebApi.IntegrationTest9.csproj", "{ECE012D5-DFB7-4FC2-9212-03F491C82D97}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectingApps.LoggingWebApi10", "ConnectingApps.LoggingWebApi10\ConnectingApps.LoggingWebApi10.csproj", "{3577CD4F-62A4-4863-9A22-F590AC7E98F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectingApps.LoggingWebApi.IntegrationTest10", "ConnectingApps.LoggingWebApi.IntegrationTest10\ConnectingApps.LoggingWebApi.IntegrationTest10.csproj", "{6CA2D6E1-ECA1-48D1-B754-64A7E95F4438}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EC44F43B-29AD-411E-8E0D-84FB44F11B5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EC44F43B-29AD-411E-8E0D-84FB44F11B5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EC44F43B-29AD-411E-8E0D-84FB44F11B5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EC44F43B-29AD-411E-8E0D-84FB44F11B5E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{12CA12C6-86AA-4666-AD7B-7A774540C9C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{12CA12C6-86AA-4666-AD7B-7A774540C9C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12CA12C6-86AA-4666-AD7B-7A774540C9C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12CA12C6-86AA-4666-AD7B-7A774540C9C1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A1D27873-0590-46BD-86BE-9D2BD9E11CF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A1D27873-0590-46BD-86BE-9D2BD9E11CF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A1D27873-0590-46BD-86BE-9D2BD9E11CF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A1D27873-0590-46BD-86BE-9D2BD9E11CF3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1E968975-2B00-4F44-A9CA-BAC408F7E03C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1E968975-2B00-4F44-A9CA-BAC408F7E03C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1E968975-2B00-4F44-A9CA-BAC408F7E03C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1E968975-2B00-4F44-A9CA-BAC408F7E03C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{890A8DFE-97A7-496B-A6C8-A1C800445A7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{890A8DFE-97A7-496B-A6C8-A1C800445A7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{890A8DFE-97A7-496B-A6C8-A1C800445A7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{890A8DFE-97A7-496B-A6C8-A1C800445A7A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B39C853D-A1B3-462A-A9DF-EDA103B2BE74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B39C853D-A1B3-462A-A9DF-EDA103B2BE74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B39C853D-A1B3-462A-A9DF-EDA103B2BE74}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -63,6 +43,14 @@ Global
 		{ECE012D5-DFB7-4FC2-9212-03F491C82D97}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECE012D5-DFB7-4FC2-9212-03F491C82D97}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECE012D5-DFB7-4FC2-9212-03F491C82D97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3577CD4F-62A4-4863-9A22-F590AC7E98F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3577CD4F-62A4-4863-9A22-F590AC7E98F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3577CD4F-62A4-4863-9A22-F590AC7E98F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3577CD4F-62A4-4863-9A22-F590AC7E98F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CA2D6E1-ECA1-48D1-B754-64A7E95F4438}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CA2D6E1-ECA1-48D1-B754-64A7E95F4438}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CA2D6E1-ECA1-48D1-B754-64A7E95F4438}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CA2D6E1-ECA1-48D1-B754-64A7E95F4438}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

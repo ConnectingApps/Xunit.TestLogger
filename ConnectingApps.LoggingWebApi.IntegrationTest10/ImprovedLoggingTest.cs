@@ -2,7 +2,7 @@ using System.Net;
 using ConnectingApps.Xunit.TestLogger;
 using Xunit.Abstractions;
 
-namespace ConnectingApps.LoggingWebApi.IntegrationTest7
+namespace ConnectingApps.LoggingWebApi.IntegrationTest10
 {
     public class ImprovedLoggingTest : IDisposable
     {
@@ -19,7 +19,7 @@ namespace ConnectingApps.LoggingWebApi.IntegrationTest7
         [Fact]
         public async Task ReadInTestOutputIfSomethingIsLogged()
         {
-            var response = await _client.GetAsync("/WeatherForecast");
+            var response = await _client.GetAsync("/weatherforecast");
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }
 

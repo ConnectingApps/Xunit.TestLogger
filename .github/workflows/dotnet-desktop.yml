@@ -9,36 +9,33 @@ on:
       - feature/**
       - bugfix/**
 
+permissions:
+  contents: read
+
 jobs:
   build_and_test:
     name: Build and Test
     runs-on: ubuntu-latest
 
-    env:  # Setting environment variable at the job level
-      OPENAI_KEY: ${{ secrets.OPENAI_KEY }}  # Accessing the secret and assigning it to an environment variable
+    permissions:
+      contents: read
+      checks: write
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
-      - name: Setup .NET SDK
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: '10.0.x' # Adjust the version as necessary
-
-      - name: Run another one-line script
-        run: echo Hello, ${{ vars.PUBLISH_NUGET }}!   
-        
       - name: Setup dotnet
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v6
         with:
-          dotnet-version: | 
+          dotnet-version: |
             8.0.x
             9.0.x
-            10.0.x         
+            10.0.x
+            11.0.x
 
       - name: List the sdks
-        run: dotnet --list-sdks  
+        run: dotnet --list-sdks
 
       - name: Restore dependencies
         run: dotnet restore Xunit.TestLogger.sln
@@ -47,16 +44,21 @@ jobs:
         run: dotnet build Xunit.TestLogger.sln --configuration Release --no-restore
 
       - name: Run Tests
-        run: python -c "import os; os.system('dotnet test Xunit.TestLogger.sln --configuration Release --no-build --verbosity normal  --logger trx');"  
-      
+        id: tests
+        run: dotnet test Xunit.TestLogger.sln --configuration Release --no-build --verbosity normal --logger trx
+
       - name: Publish Artifact Test results
-        uses: actions/upload-artifact@v4
+        if: always()
+        uses: actions/upload-artifact@v7
         with:
           name: test-results
           path: '**/TestResults/**/*.trx'
+          if-no-files-found: ignore
 
+      # Report after a failed test run too, but not when restore/build already failed (nothing to report)
       - name: Publish Test Results
-        uses: dorny/test-reporter@v1
+        if: always() && steps.tests.conclusion != 'skipped'
+        uses: dorny/test-reporter@v3
         with:
           name: 'Test Results'
           path: '**/TestResults/**/*.trx'
@@ -69,37 +71,38 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup dotnet
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v6
         with:
-          dotnet-version: | 
+          dotnet-version: |
             8.0.x
             9.0.x
-            10.0.x 
+            10.0.x
+            11.0.x
 
       - name: List the sdks
-        run: dotnet --list-sdks           
+        run: dotnet --list-sdks
 
       - name: Restore dependencies
         run: dotnet restore Xunit.TestLogger.sln
-  
+
       - name: Build Solution
-        run: dotnet build Xunit.TestLogger.sln --configuration Release --no-restore          
+        run: dotnet build Xunit.TestLogger.sln --configuration Release --no-restore
 
       - name: Pack
         run: dotnet pack ConnectingApps.Xunit.TestLogger/ConnectingApps.Xunit.TestLogger.csproj --configuration Release --no-build -o out
 
       - name: Find package file
-        run: find | grep 'nupkg'       
+        run: find | grep 'nupkg'
 
       - name: Publish Artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: nuget-package
           path: out/*.nupkg
 
       - name: Publish to NuGet
         if: github.ref == 'refs/heads/main'
-        run: dotnet nuget push "out/*.nupkg" --api-key ${{ secrets.NUGET_KEY }} --source https://api.nuget.org/v3/index.json       
+        run: dotnet nuget push "out/*.nupkg" --api-key ${{ secrets.NUGET_KEY }} --source https://api.nuget.org/v3/index.json

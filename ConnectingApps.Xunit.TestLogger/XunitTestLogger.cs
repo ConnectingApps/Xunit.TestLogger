@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using System.Globalization;
 using Xunit.Abstractions;
 
 namespace ConnectingApps.Xunit.TestLogger
@@ -25,7 +26,7 @@ namespace ConnectingApps.Xunit.TestLogger
         public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception? exception,
             Func<TState, Exception?, string> formatter)
         {
-            string message = $"{DateTime.UtcNow:yyyy-MM-dd HH:mm:ss} [{logLevel}] {formatter(state, exception)}";
+            string message = $"{DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture)} [{logLevel}] {formatter(state, exception)}";
             _testOutputHelper.WriteLine(message);
         }
     }

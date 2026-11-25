@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectingApps.LoggingWebAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectingApps.LoggingWebApi.IntegrationTest10", "ConnectingApps.LoggingWebApi.IntegrationTest10\ConnectingApps.LoggingWebApi.IntegrationTest10.csproj", "{6CA2D6E1-ECA1-48D1-B754-64A7E95F4438}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectingApps.LoggingWebApi11", "ConnectingApps.LoggingWebApi11\ConnectingApps.LoggingWebApi11.csproj", "{430C728A-899E-437E-9F10-B1027EDE4F8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectingApps.LoggingWebApi.IntegrationTest11", "ConnectingApps.LoggingWebApi.IntegrationTest11\ConnectingApps.LoggingWebApi.IntegrationTest11.csproj", "{4BD28697-EAE7-462B-BA46-39D9464F70FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{6CA2D6E1-ECA1-48D1-B754-64A7E95F4438}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CA2D6E1-ECA1-48D1-B754-64A7E95F4438}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CA2D6E1-ECA1-48D1-B754-64A7E95F4438}.Release|Any CPU.Build.0 = Release|Any CPU
+		{430C728A-899E-437E-9F10-B1027EDE4F8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{430C728A-899E-437E-9F10-B1027EDE4F8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{430C728A-899E-437E-9F10-B1027EDE4F8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{430C728A-899E-437E-9F10-B1027EDE4F8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BD28697-EAE7-462B-BA46-39D9464F70FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BD28697-EAE7-462B-BA46-39D9464F70FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BD28697-EAE7-462B-BA46-39D9464F70FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BD28697-EAE7-462B-BA46-39D9464F70FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

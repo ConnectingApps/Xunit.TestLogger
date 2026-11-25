@@ -1,5 +1,8 @@
 ﻿using System.Net;
+using ConnectingApps.Xunit.TestLogger;
 using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace ConnectingApps.LoggingWebApi.IntegrationTest10
 {
@@ -19,6 +22,10 @@ namespace ConnectingApps.LoggingWebApi.IntegrationTest10
         {
             var response = await _client.GetAsync("/weatherforecast");
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+
+            var providers = _factory.Services.GetServices<ILoggerProvider>().ToList();
+            Assert.NotEmpty(providers);
+            Assert.DoesNotContain(providers, provider => provider is TestLoggerProvider);
         }
 
         public void Dispose()

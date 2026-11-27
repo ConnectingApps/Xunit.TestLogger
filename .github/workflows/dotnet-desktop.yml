@@ -69,6 +69,10 @@ jobs:
     needs: build_and_test
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+      id-token: write
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v7
@@ -103,6 +107,15 @@ jobs:
           name: nuget-package
           path: out/*.nupkg
 
+      - name: NuGet login
+        if: github.ref == 'refs/heads/main'
+        id: login
+        uses: NuGet/login@v1
+        with:
+          user: DaanAcohen
+
       - name: Publish to NuGet
         if: github.ref == 'refs/heads/main'
-        run: dotnet nuget push "out/*.nupkg" --api-key ${{ secrets.NUGET_KEY }} --source https://api.nuget.org/v3/index.json
+        env:
+          NUGET_API_KEY: ${{ steps.login.outputs.NUGET_API_KEY }}
+        run: dotnet nuget push "out/*.nupkg" --api-key "$NUGET_API_KEY" --source https://api.nuget.org/v3/index.json
